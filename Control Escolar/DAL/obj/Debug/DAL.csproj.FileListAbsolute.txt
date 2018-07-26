@@ -9,3 +9,14 @@
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.dll
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\DAL.dll.config
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\DAL.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\DAL.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.pdb

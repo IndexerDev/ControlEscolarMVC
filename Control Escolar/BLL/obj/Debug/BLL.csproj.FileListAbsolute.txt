@@ -9,3 +9,14 @@
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.pdb
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.dll.config
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\EntityFramework.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\BLL.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\BLL.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\EntityFramework.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.dll.config
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\EntityFramework.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.pdb

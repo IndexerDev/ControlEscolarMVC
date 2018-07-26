@@ -53,3 +53,60 @@
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.pdb
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.dll.config
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\ApplicationInsights.config
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Control Escolar.dll.config
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Control Escolar.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Control Escolar.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Antlr3.Runtime.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\BLL.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.Web.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.ApplicationInsights.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Newtonsoft.Json.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Net.Http.Formatting.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Helpers.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Http.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Http.WebHost.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Mvc.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Optimization.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Razor.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.WebPages.Deployment.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.WebPages.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.WebPages.Razor.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\WebGrease.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\BLL.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.dll.config
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Helpers.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Mvc.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Optimization.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Razor.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.WebPages.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.WebPages.Deployment.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.WebPages.Razor.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Antlr3.Runtime.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Newtonsoft.Json.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Net.Http.Formatting.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Http.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.Web.Http.WebHost.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.ApplicationInsights.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Microsoft.AI.Web.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.csprojResolveAssemblyReference.cache
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.csproj.CoreCompileInputs.cache
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.xml

@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public interface IRepository<Tentity> where Tentity : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        Tentity Get(int id);
-        IEnumerable<Tentity> GetAll();
-        IEnumerable<Tentity> Find(Expression<Func<Tentity, bool>> predicate);
+        TEntity Get(int id);
+        IEnumerable<TEntity> GetAll();
+        IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
-        void Add(Tentity entity);
+        void Add(TEntity entity);
 
-        void Update(Tentity entity);
+        void Update(TEntity entity);
 
-        void Remove(Tentity entity);
+        void Remove(TEntity entity);
 
         
     }
