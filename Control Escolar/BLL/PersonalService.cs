@@ -7,14 +7,23 @@ using DAL;
 
 namespace BLL
 {
-    class PersonalService
-    {        
+    public class PersonalService
+    {
+        private readonly ControlEscolarContext _context;
+        private readonly PersonalRepository _personal;
 
         public PersonalService()
         {
-            
+            _context = new ControlEscolarContext();
+            _personal = new PersonalRepository(_context);
         }
 
+        Personal GetPersonal(int id)
+        {
+            return _personal.Get(id);
+            
+        }
+            
         
     }
 }

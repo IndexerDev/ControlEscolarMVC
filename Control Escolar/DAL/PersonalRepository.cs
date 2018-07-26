@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PersonalRepository
+    public class PersonalRepository : Repository<Personal>, IPersonalRepository
     {
-        public PersonalRepository(ControlEscolarContext context)
+        public PersonalRepository(ControlEscolarContext context) 
+            : base(context)
         {
 
         }

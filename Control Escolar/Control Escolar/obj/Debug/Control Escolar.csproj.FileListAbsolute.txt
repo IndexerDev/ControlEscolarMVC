@@ -46,3 +46,10 @@
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.dll
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.pdb
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\BLL.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\BLL.pdb
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.pdb
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\DAL.dll.config
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.xml
