@@ -25,9 +25,9 @@ namespace DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Personal> Personals { get; set; }
-        public virtual DbSet<PersonalTipo> PersonalTipoes { get; set; }
-        public virtual DbSet<SueldoTabulacion> SueldoTabulacions { get; set; }
+        public virtual DbSet<Personal> Personal { get; set; }
+        public virtual DbSet<PersonalTipos> PersonalTipos { get; set; }
+        public virtual DbSet<SueldoTabulaciones> SueldoTabulaciones { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
         public virtual DbSet<PersonalSueldo> PersonalSueldos { get; set; }
     }

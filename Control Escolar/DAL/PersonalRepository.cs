@@ -13,5 +13,12 @@ namespace DAL
         {
 
         }
+
+        public IEnumerable<Personal> GetPersonalConSueldos()
+        {
+            throw new NotImplementedException();            
+        }
+
+        public ControlEscolarContext ControlEscolarContext { get; }
     }
 }

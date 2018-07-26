@@ -6,8 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f24ac218d3bc4529aed69613cce010ab" Name="Diagram1">
         <EntityTypeShape EntityType="ControlDbContext.Personal" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ControlDbContext.PersonalTipo" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="ControlDbContext.SueldoTabulacion" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlDbContext.PersonalTipos" Width="1.875" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlDbContext.SueldoTabulaciones" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ControlDbContext.Usuario" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ControlDbContext.PersonalSueldo" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="ControlDbContext.FK_Personal_PersonalTipos1" ManuallyRouted="false" />

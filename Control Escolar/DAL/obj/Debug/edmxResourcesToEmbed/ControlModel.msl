@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="ControlDbContextStoreContainer" CdmEntityContainer="Control_EscolarEntities">
-    <EntitySetMapping Name="Personals">
+  <EntityContainerMapping StorageEntityContainer="ControlDbContextStoreContainer" CdmEntityContainer="ControlEscolarContext">
+    <EntitySetMapping Name="Personal">
       <EntityTypeMapping TypeName="ControlDbContext.Personal">
         <MappingFragment StoreEntitySet="Personal">
           <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
@@ -15,8 +15,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="PersonalTipoes">
-      <EntityTypeMapping TypeName="ControlDbContext.PersonalTipo">
+    <EntitySetMapping Name="PersonalTipos">
+      <EntityTypeMapping TypeName="ControlDbContext.PersonalTipos">
         <MappingFragment StoreEntitySet="PersonalTipos">
           <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
           <ScalarProperty Name="PersonalTipoDescripcion" ColumnName="PersonalTipoDescripcion" />
@@ -24,8 +24,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="SueldoTabulacions">
-      <EntityTypeMapping TypeName="ControlDbContext.SueldoTabulacion">
+    <EntitySetMapping Name="SueldoTabulaciones">
+      <EntityTypeMapping TypeName="ControlDbContext.SueldoTabulaciones">
         <MappingFragment StoreEntitySet="SueldosTabulacion">
           <ScalarProperty Name="IdSueldosTabulacion" ColumnName="IdSueldosTabulacion" />
           <ScalarProperty Name="SueldoMinimo" ColumnName="SueldoMinimo" />

@@ -73,12 +73,12 @@
     <Compile Include="PersonalSueldo.cs">
       <DependentUpon>ControlModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PersonalTipo.cs">
+    <Compile Include="PersonalTipos.cs">
       <DependentUpon>ControlModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="SueldoTabulacion.cs">
+    <Compile Include="SueldoTabulaciones.cs">
       <DependentUpon>ControlModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">

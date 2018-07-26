@@ -29,7 +29,7 @@ namespace DAL
         public string NumeroControl { get; set; }
         public bool Estatus { get; set; }
     
-        public virtual PersonalTipo PersonalTipos { get; set; }
+        public virtual PersonalTipos PersonalTipos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PersonalSueldo> PersonalSueldos { get; set; }
     }

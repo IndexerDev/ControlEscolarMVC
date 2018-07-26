@@ -15,17 +15,17 @@
     <NavigationProperty Name="PersonalTipos" Relationship="Self.FK_Personal_PersonalTipos1" FromRole="Personal" ToRole="PersonalTipos" />
     <NavigationProperty Name="PersonalSueldos" Relationship="Self.FK_PersonalSueldos_Personal" FromRole="Personal" ToRole="PersonalSueldos" />
   </EntityType>
-  <EntityType Name="PersonalTipo">
+  <EntityType Name="PersonalTipos">
     <Key>
       <PropertyRef Name="IdPersonalTipo" />
     </Key>
     <Property Name="IdPersonalTipo" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PersonalTipoDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IsPersonalLaboral" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Personals" Relationship="Self.FK_Personal_PersonalTipos1" FromRole="PersonalTipos" ToRole="Personal" />
+    <NavigationProperty Name="Personal" Relationship="Self.FK_Personal_PersonalTipos1" FromRole="PersonalTipos" ToRole="Personal" />
     <NavigationProperty Name="SueldosTabulacions" Relationship="Self.FK_SueldosTabulacion_PersonalTipos" FromRole="PersonalTipos" ToRole="SueldosTabulacion" />
   </EntityType>
-  <EntityType Name="SueldoTabulacion">
+  <EntityType Name="SueldoTabulaciones">
     <Key>
       <PropertyRef Name="IdSueldosTabulacion" />
     </Key>
@@ -53,7 +53,7 @@
     <NavigationProperty Name="Personal" Relationship="Self.FK_PersonalSueldos_Personal" FromRole="PersonalSueldos" ToRole="Personal" />
   </EntityType>
   <Association Name="FK_Personal_PersonalTipos1">
-    <End Role="PersonalTipos" Type="ControlDbContext.PersonalTipo" Multiplicity="1">
+    <End Role="PersonalTipos" Type="ControlDbContext.PersonalTipos" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
     <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
@@ -79,10 +79,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_SueldosTabulacion_PersonalTipos">
-    <End Role="PersonalTipos" Type="ControlDbContext.PersonalTipo" Multiplicity="1">
+    <End Role="PersonalTipos" Type="ControlDbContext.PersonalTipos" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
-    <End Role="SueldosTabulacion" Type="ControlDbContext.SueldoTabulacion" Multiplicity="*" />
+    <End Role="SueldosTabulacion" Type="ControlDbContext.SueldoTabulaciones" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="PersonalTipos">
         <PropertyRef Name="IdPersonalTipo" />
@@ -92,23 +92,23 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Control_EscolarEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Personals" EntityType="Self.Personal" />
-    <EntitySet Name="PersonalTipoes" EntityType="ControlDbContext.PersonalTipo" />
-    <EntitySet Name="SueldoTabulacions" EntityType="ControlDbContext.SueldoTabulacion" />
+  <EntityContainer Name="ControlEscolarContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Personal" EntityType="Self.Personal" />
+    <EntitySet Name="PersonalTipos" EntityType="ControlDbContext.PersonalTipos" />
+    <EntitySet Name="SueldoTabulaciones" EntityType="ControlDbContext.SueldoTabulaciones" />
     <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
     <EntitySet Name="PersonalSueldos" EntityType="Self.PersonalSueldo" />
     <AssociationSet Name="FK_Personal_PersonalTipos1" Association="Self.FK_Personal_PersonalTipos1">
-      <End Role="PersonalTipos" EntitySet="PersonalTipoes" />
-      <End Role="Personal" EntitySet="Personals" />
+      <End Role="PersonalTipos" EntitySet="PersonalTipos" />
+      <End Role="Personal" EntitySet="Personal" />
     </AssociationSet>
     <AssociationSet Name="FK_PersonalSueldos_Personal" Association="Self.FK_PersonalSueldos_Personal">
-      <End Role="Personal" EntitySet="Personals" />
+      <End Role="Personal" EntitySet="Personal" />
       <End Role="PersonalSueldos" EntitySet="PersonalSueldos" />
     </AssociationSet>
     <AssociationSet Name="FK_SueldosTabulacion_PersonalTipos" Association="Self.FK_SueldosTabulacion_PersonalTipos">
-      <End Role="PersonalTipos" EntitySet="PersonalTipoes" />
-      <End Role="SueldosTabulacion" EntitySet="SueldoTabulacions" />
+      <End Role="PersonalTipos" EntitySet="PersonalTipos" />
+      <End Role="SueldosTabulacion" EntitySet="SueldoTabulaciones" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
