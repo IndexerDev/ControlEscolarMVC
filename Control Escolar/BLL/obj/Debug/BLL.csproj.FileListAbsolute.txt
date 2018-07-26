@@ -1,0 +1,6 @@
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\BLL.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\BLL.pdb
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.pdb

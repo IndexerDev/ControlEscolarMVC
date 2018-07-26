@@ -1,0 +1,11 @@
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\DAL.dll.config
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\DAL.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\DAL.pdb
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.SqlServer.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.xml
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\bin\Debug\EntityFramework.SqlServer.xml
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\DAL\obj\Debug\DAL.pdb

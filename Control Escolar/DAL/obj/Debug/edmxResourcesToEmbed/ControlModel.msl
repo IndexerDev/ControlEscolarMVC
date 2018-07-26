@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ControlDbContextStoreContainer" CdmEntityContainer="Control_EscolarEntities">
+    <EntitySetMapping Name="Personals">
+      <EntityTypeMapping TypeName="ControlDbContext.Personal">
+        <MappingFragment StoreEntitySet="Personal">
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
+          <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+          <ScalarProperty Name="NumeroControl" ColumnName="NumeroControl" />
+          <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalTipoes">
+      <EntityTypeMapping TypeName="ControlDbContext.PersonalTipo">
+        <MappingFragment StoreEntitySet="PersonalTipos">
+          <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
+          <ScalarProperty Name="PersonalTipoDescripcion" ColumnName="PersonalTipoDescripcion" />
+          <ScalarProperty Name="IsPersonalLaboral" ColumnName="IsPersonalLaboral" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SueldoTabulacions">
+      <EntityTypeMapping TypeName="ControlDbContext.SueldoTabulacion">
+        <MappingFragment StoreEntitySet="SueldosTabulacion">
+          <ScalarProperty Name="IdSueldosTabulacion" ColumnName="IdSueldosTabulacion" />
+          <ScalarProperty Name="SueldoMinimo" ColumnName="SueldoMinimo" />
+          <ScalarProperty Name="SueldoMaximo" ColumnName="SueldoMaximo" />
+          <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="ControlDbContext.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="NombreUsuario" ColumnName="NombreUsuario" />
+          <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonalSueldos">
+      <EntityTypeMapping TypeName="ControlDbContext.PersonalSueldo">
+        <MappingFragment StoreEntitySet="PersonalSueldos">
+          <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
+          <ScalarProperty Name="Sueldo" ColumnName="Sueldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
