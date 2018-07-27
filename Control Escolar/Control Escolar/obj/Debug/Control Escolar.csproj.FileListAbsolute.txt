@@ -112,3 +112,7 @@ C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control E
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.xml
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.dll
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.xml
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.Abstractions.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.AspNet.WebApi.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.Container.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\WebActivatorEx.dll

@@ -14,11 +14,14 @@ namespace Control_Escolar.Controllers
 {
     [RoutePrefix("api/personal")]
     public class PersonalController : ApiController
-    {
-        private readonly PersonalService _personal;
+    {        
+        private readonly IPersonalService _personal;
 
-
-        public PersonalController() => _personal = new PersonalService();
+        public PersonalController(IPersonalService personal)
+        {     
+            _personal = personal;
+        } 
+           
 
         [HttpGet]
         [Route("{id}")]
