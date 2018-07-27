@@ -21,6 +21,7 @@ namespace DAL
         {
             Context.Set<TEntity>().Add(entity);
         }
+        
 
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {

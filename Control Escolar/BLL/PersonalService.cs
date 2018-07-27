@@ -22,14 +22,19 @@ namespace BLL
         public Personal GetPersonal(int id) => _personal.Get(id);
 
         public IEnumerable<Personal> GetPersonalConSueldos()
-        {                       
-            return _personal.GetPersonalConSueldos();
+        {
+            return _personal.GetPersonalConSueldos().ToList();
         }
 
         public void Add(Personal personal)
         {            
             _personal.Add(personal);
             _personal.Save();            
+        }
+
+        public void Update()
+        {
+            _personal.Save();
         }
         
         public bool Delete(int id)

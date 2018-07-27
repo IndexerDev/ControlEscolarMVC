@@ -6,13 +6,14 @@ using System.Web;
 
 namespace Control_Escolar.Models
 {
-    public class PersonalModel
+    public class PersonalDto
     {
         public int IdPersonal { get; set; }
+        [Required]
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string CorreoElectronico { get; set; }
-        public byte IdPersonalTipo { get; set; }
+        public PersonalTipoDto PersonalTipo { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? FechaNacimiento { get; set; }

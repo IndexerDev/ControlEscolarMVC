@@ -18,7 +18,7 @@ namespace DAL
         public IEnumerable<Personal> GetPersonalConSueldos()
         {
             return ControlEscolarContext.Personal
-                .Include(s => s.PersonalSueldos);
+                .Include(t => t.PersonalTipos);                
         }
         
 

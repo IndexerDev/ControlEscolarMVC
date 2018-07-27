@@ -116,3 +116,8 @@ C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control E
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.AspNet.WebApi.dll
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.Container.dll
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\WebActivatorEx.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.ValueTuple.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.pdb
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.xml
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.ValueTuple.xml

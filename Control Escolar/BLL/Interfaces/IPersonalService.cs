@@ -15,6 +15,8 @@ namespace BLL
 
         void Add(Personal personal);
 
+        void Update();
+
         bool Delete(int id);
 
     }

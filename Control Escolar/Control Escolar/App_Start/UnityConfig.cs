@@ -1,5 +1,6 @@
 using System;
 using BLL;
+using AutoMapper;
 
 using Unity;
 
@@ -45,6 +46,9 @@ namespace Control_Escolar
             // container.RegisterType<IProductRepository, ProductRepository>();
 
             container.RegisterType<IPersonalService, PersonalService>();
+
+            var mapper = MappingProfile.InitialzeAutoMapper().CreateMapper();
+            container.RegisterInstance<IMapper>(mapper);
 
         }
     }
