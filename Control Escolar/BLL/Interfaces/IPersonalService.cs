@@ -13,6 +13,8 @@ namespace BLL
 
         IEnumerable<Personal> GetPersonalConSueldos();
 
+        IList<T> GetPersonalTipoSueldo<T>();
+
         void Add(Personal personal);
 
         void Update();

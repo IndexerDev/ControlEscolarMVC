@@ -42,7 +42,7 @@ namespace Control_Escolar.Controllers
 
         [HttpGet]
         public IHttpActionResult GetAll()
-        {
+        {            
             var personalSueldos = _personal.GetPersonalConSueldos();
             if (personalSueldos == null)
                 return NotFound();
@@ -56,11 +56,11 @@ namespace Control_Escolar.Controllers
         [HttpPost]
         public IHttpActionResult Add(PersonalDto personalDto)
         {
-            if (personalDto == null)
-                return BadRequest("Error al insertar, corriga la información");
+            if (!ModelState.IsValid)
+                return BadRequest("El formato introducido es incorrecto");
 
-            var personalAdd =_mapper.Map<PersonalDto, Personal>(personalDto);
-            
+            var personalAdd =_mapper.Map<PersonalDto, Personal>(personalDto);            
+
             _personal.Add(personalAdd);
 
             return StatusCode(HttpStatusCode.NoContent);
@@ -70,7 +70,7 @@ namespace Control_Escolar.Controllers
         [HttpPut]
         public IHttpActionResult Update(PersonalDto personalDto)
         {
-            if (personalDto == null)
+            if (!ModelState.IsValid)
                 return BadRequest("Introduzca la información de forma correcta");
 
             var personal = _personal.GetPersonal(personalDto.IdPersonal);

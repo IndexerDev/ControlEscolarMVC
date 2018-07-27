@@ -1,30 +1,39 @@
 ﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 
 namespace BLL
 {
     public class PersonalService : IPersonalService
     {
         private readonly ControlEscolarContext _context = new ControlEscolarContext();
-        private readonly PersonalRepository _personal;
+        private readonly PersonalRepository _personal;        
 
         public PersonalService()
         {            
             _personal = new PersonalRepository(_context);
         }
 
-        public Personal GetPersonal(int id) => _personal.Get(id);
+
+        public Personal GetPersonal(int id)
+        {
+            return _personal.Get(id);
+        } 
+
 
         public IEnumerable<Personal> GetPersonalConSueldos()
         {
             return _personal.GetPersonalConSueldos().ToList();
         }
+
+
+        public IList<T> GetPersonalTipoSueldo<T>()
+        {
+            throw new NotImplementedException();
+        }
+
 
         public void Add(Personal personal)
         {            
@@ -32,11 +41,13 @@ namespace BLL
             _personal.Save();            
         }
 
+
         public void Update()
         {
             _personal.Save();
         }
         
+
         public bool Delete(int id)
         {
             var personalEliminar = _personal.Get(id);
@@ -47,6 +58,15 @@ namespace BLL
             _personal.Save();
 
             return true;
+        }
+
+
+        private bool BuscaCorreoElectronico(string correoElectronico)
+        {            
+            var objetosEncontrados =
+                _personal.Find(personal => personal.CorreoElectronico == correoElectronico).ToList();
+
+            return objetosEncontrados.Count != 0 ? true : false;
         }
 
     }

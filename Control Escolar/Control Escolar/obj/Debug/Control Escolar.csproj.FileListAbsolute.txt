@@ -121,3 +121,12 @@ C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control E
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.pdb
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.xml
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.ValueTuple.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.ValueTuple.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.Abstractions.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.AspNet.WebApi.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\Unity.Container.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\WebActivatorEx.dll
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.pdb
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\AutoMapper.xml
+C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\System.ValueTuple.xml

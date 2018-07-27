@@ -9,7 +9,6 @@ namespace DAL
     public interface IPersonalRepository : IRepository<Personal>
     {
         IEnumerable<Personal> GetPersonalConSueldos();
-
-
+        
     }
 }
