@@ -110,3 +110,5 @@ C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control E
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\obj\Debug\Control Escolar.pdb
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.dll
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.xml
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.dll
+\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\Control Escolar\bin\EntityFramework.SqlServer.xml

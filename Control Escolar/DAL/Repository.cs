@@ -41,12 +41,7 @@ namespace DAL
         {
             Context.Set<TEntity>().Remove(entity);            
         }
-
-        public void Update(TEntity entity)
-        {
-            Context.Entry(entity).State = EntityState.Modified;            
-        }
-
+        
         public void Save()
         {
             Context.SaveChanges();

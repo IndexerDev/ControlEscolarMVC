@@ -14,9 +14,9 @@ namespace Control_Escolar.Controllers
 {
     [RoutePrefix("api/personal")]
     public class PersonalController : ApiController
-    {        
+    {
         private readonly PersonalService _personal;
-        
+
 
         public PersonalController() => _personal = new PersonalService();
 
@@ -36,7 +36,7 @@ namespace Control_Escolar.Controllers
                 Apellidos = personal.Apellidos,
                 CorreoElectronico = personal.CorreoElectronico,
                 Estatus = personal.Estatus,
-                FechaNacimiento = personal.FechaNacimiento,                
+                FechaNacimiento = personal.FechaNacimiento,
                 NumeroControl = personal.NumeroControl
             };
 
@@ -46,7 +46,7 @@ namespace Control_Escolar.Controllers
         [HttpGet]
         public IHttpActionResult GetAll()
         {
-            var personalSueldos = _personal.GerPersonalConSueldos();
+            var personalSueldos = _personal.GetPersonalConSueldos();
             if (personalSueldos == null)
                 return NotFound();
 
@@ -60,7 +60,7 @@ namespace Control_Escolar.Controllers
                     Apellidos = personalSueldo.Apellidos,
                     CorreoElectronico = personalSueldo.CorreoElectronico,
                     FechaNacimiento = personalSueldo.FechaNacimiento,
-                    Estatus = personalSueldo.Estatus,                    
+                    Estatus = personalSueldo.Estatus,
                     NumeroControl = personalSueldo.NumeroControl,
                     //PersonalSueldo = personalSueldo.PersonalSueldos.Sueldo
                 };
@@ -76,7 +76,7 @@ namespace Control_Escolar.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest("Error al insertar, corriga la información");
-            
+
             var personal = new Personal();
             personal.Nombre = personalModel.Nombre;
             personal.Apellidos = personalModel.Apellidos;
@@ -85,7 +85,7 @@ namespace Control_Escolar.Controllers
             personal.Estatus = personalModel.Estatus;
             personal.NumeroControl = personalModel.NumeroControl;
             personal.IdPersonalTipo = personalModel.IdPersonalTipo;
-            
+
 
 
 
@@ -102,6 +102,16 @@ namespace Control_Escolar.Controllers
             //};
 
             _personal.Add(personal);
+
+            return StatusCode(HttpStatusCode.NoContent);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public IHttpActionResult Delete(int id)
+        {
+            if (!_personal.Delete(id))
+                return NotFound();
 
             return StatusCode(HttpStatusCode.NoContent);
         }

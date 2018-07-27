@@ -21,18 +21,9 @@ namespace BLL
 
         public Personal GetPersonal(int id) => _personal.Get(id);
 
-        public IEnumerable<Personal> GerPersonalConSueldos()
-        {
-            var personal = _personal.GetPersonalConSueldos();
-
-            // I must change the value of Sueldo if the object returns null in that field
-            //for (int i = 0; i < personal.Count(); i++)
-            //{
-                
-
-            //}
-
-            return new List<Personal>();
+        public IEnumerable<Personal> GetPersonalConSueldos()
+        {                       
+            return _personal.GetPersonalConSueldos();
         }
 
         public void Add(Personal personal)
@@ -41,6 +32,17 @@ namespace BLL
             _personal.Save();            
         }
         
+        public bool Delete(int id)
+        {
+            var personalEliminar = _personal.Get(id);
+            if (personalEliminar == null)
+                return false;
+
+            _personal.Remove(personalEliminar);
+            _personal.Save();
+
+            return true;
+        }
 
     }
 }
