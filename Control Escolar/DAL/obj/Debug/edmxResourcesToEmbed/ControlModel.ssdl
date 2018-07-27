@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="ControlDbContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="ControlDbContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Personal">
     <Key>
       <PropertyRef Name="IdPersonal" />
@@ -13,12 +13,9 @@
     <Property Name="NumeroControl" Type="varchar" MaxLength="17" Nullable="false" />
     <Property Name="Estatus" Type="bit" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'Control_Escolar.dbo.PersonalSueldos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="PersonalSueldos">
     <Key>
       <PropertyRef Name="IdPersonal" />
-      <PropertyRef Name="Sueldo" />
     </Key>
     <Property Name="IdPersonal" Type="int" Nullable="false" />
     <Property Name="Sueldo" Type="money" Nullable="false" />
@@ -64,7 +61,7 @@ warning 6002: The table/view 'Control_Escolar.dbo.PersonalSueldos' does not have
   </Association>
   <Association Name="FK_PersonalSueldos_Personal">
     <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
-    <End Role="PersonalSueldos" Type="Self.PersonalSueldos" Multiplicity="*" />
+    <End Role="PersonalSueldos" Type="Self.PersonalSueldos" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="Personal">
         <PropertyRef Name="IdPersonal" />
@@ -90,15 +87,10 @@ warning 6002: The table/view 'Control_Escolar.dbo.PersonalSueldos' does not have
   </Association>
   <EntityContainer Name="ControlDbContextStoreContainer">
     <EntitySet Name="Personal" EntityType="Self.Personal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonalSueldos" EntityType="Self.PersonalSueldos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PersonalTipos" EntityType="Self.PersonalTipos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SueldosTabulacion" EntityType="Self.SueldosTabulacion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PersonalSueldos" EntityType="Self.PersonalSueldos" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [PersonalSueldos].[IdPersonal] AS [IdPersonal], 
-    [PersonalSueldos].[Sueldo] AS [Sueldo]
-    FROM [dbo].[PersonalSueldos] AS [PersonalSueldos]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_Personal_PersonalTipos1" Association="Self.FK_Personal_PersonalTipos1">
       <End Role="PersonalTipos" EntitySet="PersonalTipos" />
       <End Role="Personal" EntitySet="Personal" />

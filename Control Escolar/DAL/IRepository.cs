@@ -19,6 +19,7 @@ namespace DAL
 
         void Remove(TEntity entity);
 
-        
+        void Save();
+
     }
 }

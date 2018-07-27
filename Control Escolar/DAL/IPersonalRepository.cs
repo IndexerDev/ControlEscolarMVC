@@ -10,5 +10,6 @@ namespace DAL
     {
         IEnumerable<Personal> GetPersonalConSueldos();
 
+
     }
 }

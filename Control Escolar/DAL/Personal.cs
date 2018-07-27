@@ -14,12 +14,6 @@ namespace DAL
     
     public partial class Personal
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Personal()
-        {
-            this.PersonalSueldos = new HashSet<PersonalSueldo>();
-        }
-    
         public int IdPersonal { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
@@ -30,7 +24,6 @@ namespace DAL
         public bool Estatus { get; set; }
     
         public virtual PersonalTipos PersonalTipos { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PersonalSueldo> PersonalSueldos { get; set; }
+        public virtual PersonalSueldo PersonalSueldos { get; set; }
     }
 }

@@ -46,7 +46,6 @@
   <EntityType Name="PersonalSueldo">
     <Key>
       <PropertyRef Name="IdPersonal" />
-      <PropertyRef Name="Sueldo" />
     </Key>
     <Property Name="IdPersonal" Type="Int32" Nullable="false" />
     <Property Name="Sueldo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
@@ -68,7 +67,7 @@
   </Association>
   <Association Name="FK_PersonalSueldos_Personal">
     <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
-    <End Role="PersonalSueldos" Type="Self.PersonalSueldo" Multiplicity="*" />
+    <End Role="PersonalSueldos" Type="Self.PersonalSueldo" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="Personal">
         <PropertyRef Name="IdPersonal" />
