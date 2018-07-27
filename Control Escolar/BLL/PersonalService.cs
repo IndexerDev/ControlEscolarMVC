@@ -9,7 +9,7 @@ using DAL;
 
 namespace BLL
 {
-    public class PersonalService
+    public class PersonalService : IPersonalService
     {
         private readonly ControlEscolarContext _context = new ControlEscolarContext();
         private readonly PersonalRepository _personal;
