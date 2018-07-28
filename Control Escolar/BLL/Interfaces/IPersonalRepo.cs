@@ -13,6 +13,8 @@ namespace BLL
 
         List<int> ProcesoRegistroPersonal(Personal personal, decimal sueldo);
 
+        List<int> ProcesoActualizacionPersonal(Personal personal, decimal sueldo);
+
         PersonalSueldo GetPersonalSueldo(int id);
 
         void RemoveSueldo(PersonalSueldo personalSueldo);

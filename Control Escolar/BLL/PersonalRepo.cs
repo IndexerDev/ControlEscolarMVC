@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using System.Data.Entity.Migrations;
 
 namespace BLL
 {
@@ -25,24 +26,23 @@ namespace BLL
 
         public List<int> ProcesoRegistroPersonal(Personal personal, decimal sueldo)
         {
-            var validaciones = new List<int>();
-
+            var validaciones = new List<int>();            
+                                        
             if (GetCorreoElectronico(personal.CorreoElectronico))
-                validaciones.Add(Enum.Validaciones.Correo.GetHashCode());
+                validaciones.Add(Enums.Validaciones.Correo.GetHashCode());
                         
             if (GetNumeroControl(personal.NumeroControl))
-                validaciones.Add(Enum.Validaciones.NumeroControl.GetHashCode());
+                validaciones.Add(Enums.Validaciones.NumeroControl.GetHashCode());
 
             var isPersonalLaboral = CeContext.PersonalTipos.Where(pt => pt.IdPersonalTipo == personal.IdPersonalTipo)
                 .Single().IsPersonalLaboral;
 
             if (validaciones.Count == 0)
             {
-                validaciones.Add(Enum.Validaciones.Exito.GetHashCode());
+                validaciones.Add(Enums.Validaciones.Exito.GetHashCode());
 
                 if (isPersonalLaboral)
-                {
-                    
+                {                    
                     CeContext.Personal.Add(personal);
                     CeContext.SaveChanges();
 
@@ -51,7 +51,7 @@ namespace BLL
                         IdPersonal = personal.IdPersonal,
                         Sueldo = sueldo
                     };
-
+                    
                     CeContext.PersonalSueldos.Add(personalSueldo);
                     CeContext.SaveChanges();
                 }
@@ -64,7 +64,51 @@ namespace BLL
             
             return validaciones;
         }
-        
+
+
+        public List<int> ProcesoActualizacionPersonal(Personal personal, decimal sueldo)
+        {
+            var validaciones = new List<int>();
+
+            var personalUpdate = CeContext.Personal.SingleOrDefault(p => p.IdPersonal == personal.IdPersonal);
+
+            if (GetCorreoElectronico(personal.CorreoElectronico))
+                if (personalUpdate.CorreoElectronico == personal.CorreoElectronico)
+                    validaciones.Add(Enums.Validaciones.Correo.GetHashCode());
+
+            if (GetNumeroControl(personal.NumeroControl))
+                if (personalUpdate.NumeroControl == personal.NumeroControl)
+                    validaciones.Add(Enums.Validaciones.NumeroControl.GetHashCode());
+
+            var isPersonalLaboral = CeContext.PersonalTipos.Where(pt => pt.IdPersonalTipo == personal.IdPersonalTipo)
+                .Single().IsPersonalLaboral;
+
+            if (validaciones.Count == 0)
+            {
+                validaciones.Add(Enums.Validaciones.Exito.GetHashCode());
+                
+                personalUpdate.Nombre = personal.Nombre;
+                personalUpdate.Apellidos = personal.Apellidos;
+                personalUpdate.CorreoElectronico = personal.CorreoElectronico;
+                personalUpdate.IdPersonalTipo = personal.IdPersonalTipo;
+                personalUpdate.FechaNacimiento = personal.FechaNacimiento;
+                personalUpdate.NumeroControl = personal.NumeroControl;
+                personalUpdate.Estatus = personal.Estatus;
+
+                CeContext.SaveChanges();
+
+                if (isPersonalLaboral)
+                {
+                    var personalSueldo = GetPersonalSueldo(personal.IdPersonal);
+                    personalSueldo.Sueldo = sueldo;
+                    
+                    CeContext.SaveChanges();
+                }
+              
+            }
+
+            return validaciones;
+        }
 
         public PersonalSueldo GetPersonalSueldo(int id)
         {
@@ -91,7 +135,7 @@ namespace BLL
 
             return resultado != null;
         }
-
+        
 
         public ControlEscolarContext CeContext => Context as ControlEscolarContext;
 

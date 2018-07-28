@@ -30,8 +30,11 @@ namespace Control_Escolar
                 cfg.CreateMap<PersonalDto, Personal>()
                     .ForMember(p => p.IdPersonal, opt => opt.Ignore())
                     .ForMember(dest => dest.IdPersonalTipo, opt =>
-                    opt.MapFrom(src => src.PersonalTipo.IdPersonalTipo));                    
+                    opt.MapFrom(src => src.PersonalTipo.IdPersonalTipo));
                 
+                cfg.CreateMap<PersonalUpdateDto, Personal>()
+                    .ForMember(dest => dest.IdPersonalTipo, opt =>
+                    opt.MapFrom(src => src.PersonalTipo.IdPersonalTipo));
 
 
             });

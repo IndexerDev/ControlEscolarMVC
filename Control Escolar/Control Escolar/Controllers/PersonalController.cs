@@ -17,7 +17,7 @@ namespace Control_Escolar.Controllers
     public class PersonalController : ApiController
     {                
         private readonly IPersonalRepo _repo;
-        private readonly IMapper _mapper;              
+        private readonly IMapper _mapper;
         
         public PersonalController(IPersonalRepo repo , IMapper mapper)
         {                 
@@ -64,33 +64,32 @@ namespace Control_Escolar.Controllers
             var resultado = new List<int>();
             resultado = _repo.ProcesoRegistroPersonal(personalToAdd, personalDto.PersonalSueldo);
 
-            if (resultado.Contains(BLL.Enum.Validaciones.Correo.GetHashCode()))
+            if (resultado.Contains(Enums.Validaciones.Correo.GetHashCode()))
                 return BadRequest("El Correo Electrónico ya existe");
 
-            if (resultado.Contains(BLL.Enum.Validaciones.NumeroControl.GetHashCode()))
+            if (resultado.Contains(Enums.Validaciones.NumeroControl.GetHashCode()))
                 return BadRequest("El Número de Control ya existe");
 
             return StatusCode(HttpStatusCode.NoContent);
         }
 
 
-
-
         [HttpPut]
-        public IHttpActionResult Update(PersonalDto personalDto)
+        public IHttpActionResult Update(PersonalUpdateDto personalDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest("Introduzca la información de forma correcta");
 
-            var personalToAdd = _mapper.Map<PersonalDto, Personal>(personalDto);
-            
-            var personal = _repo.Get(personalDto.IdPersonal);
-            if (personal == null)
-                return BadRequest("Personal no existe");
+            var personalToUpdate = _mapper.Map<PersonalUpdateDto, Personal>(personalDto);            
 
-            _mapper.Map(personalDto, personal);    
+            var resultado = new List<int>();
+            resultado = _repo.ProcesoActualizacionPersonal(personalToUpdate, personalDto.PersonalSueldo);
 
-            _repo.Save();
+            if (resultado.Contains(Enums.Validaciones.Correo.GetHashCode()))
+                return BadRequest("El Correo Electrónico ya existe");
+
+            if (resultado.Contains(Enums.Validaciones.NumeroControl.GetHashCode()))
+                return BadRequest("El Número de Control ya existe");
 
             return StatusCode(HttpStatusCode.NoContent);
         }

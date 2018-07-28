@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Enum.cs" />
     <Compile Include="Interfaces\IPersonalRepo.cs" />
+    <Compile Include="Interfaces\IPersonalTipoRepo.cs" />
     <Compile Include="PersonalRepo.cs" />
+    <Compile Include="PersonalTipoRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
