@@ -10,6 +10,7 @@ using BLL;
 using Control_Escolar.Models;
 using DAL;
 using AutoMapper;
+using Enum = System.Enum;
 
 namespace Control_Escolar.Controllers
 {
@@ -59,13 +60,16 @@ namespace Control_Escolar.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("El formato introducido es incorrecto");
 
-            var personalAdd =_mapper.Map<PersonalDto, Personal>(personalDto);                        
+            var personalToAdd =_mapper.Map<PersonalDto, Personal>(personalDto);
 
-            _repo.Add(personalAdd);
-            _repo.Save();
+            _repo.ProcesoRegistroPersonal(personalToAdd);
+            
+            // crear Enum con switch para devolver a cliente algo
 
             return StatusCode(HttpStatusCode.NoContent);
         }
+
+
 
 
         [HttpPut]

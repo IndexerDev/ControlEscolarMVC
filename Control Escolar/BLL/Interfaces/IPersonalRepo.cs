@@ -9,6 +9,9 @@ namespace BLL
 {
     public interface IPersonalRepo : IRepository<Personal>
     {
-        IEnumerable<Personal> GetPersonalConSueldos();
+        IEnumerable<Personal> GetPersonalConSueldos();        
+
+        List<int> ProcesoRegistroPersonal(Personal personal);
+
     }
 }

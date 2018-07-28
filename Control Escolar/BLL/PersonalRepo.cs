@@ -21,6 +21,63 @@ namespace BLL
                 .Include(t => t.PersonalTipos);
             
         }
+        
+
+        public List<int> ProcesoRegistroPersonal(Personal personal)
+        {
+            var validaciones = new List<int>();
+
+            if (GetCorreoElectronico(personal.CorreoElectronico))
+                validaciones.Add(Enum.Validaciones.Correo.GetHashCode());
+                        
+            if (GetNumeroControl(personal.NumeroControl))
+                validaciones.Add(Enum.Validaciones.NumeroControl.GetHashCode());
+
+            var isPersonalLaboral = CeContext.PersonalTipos.Where(pt => pt.IdPersonalTipo == personal.IdPersonalTipo)
+                .Single().IsPersonalLaboral;
+
+            if (validaciones.Count == 0)
+            {
+                validaciones.Add(Enum.Validaciones.Exito.GetHashCode());
+
+                if (isPersonalLaboral)
+                {
+                    var personalSueldo = new PersonalSueldo
+                    {
+                        IdPersonal = personal.IdPersonal,
+                        Sueldo = personal.PersonalSueldos.Sueldo
+                    };
+
+                    CeContext.Personal.Add(personal);
+                    CeContext.PersonalSueldos.Add(personalSueldo);
+                    CeContext.SaveChanges();
+                }
+                else
+                {
+                    CeContext.Personal.Add(personal);
+                    CeContext.SaveChanges();
+                }
+            }
+            
+            return validaciones;
+        }
+
+
+
+        private bool GetCorreoElectronico(string correoElectronico)
+        {
+            var resultado = CeContext.Personal.SingleOrDefault(c => c.CorreoElectronico == correoElectronico);
+            
+            return resultado != null;
+        }
+
+        private bool GetNumeroControl(string numeroControl)
+        {
+            var resultado = CeContext.Personal.SingleOrDefault(c => c.NumeroControl == numeroControl);
+
+            return resultado != null;
+        }
+
 
         /// <summary>
         /// En proceso de implementación

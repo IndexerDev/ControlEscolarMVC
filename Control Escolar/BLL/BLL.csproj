@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum.cs" />
     <Compile Include="Interfaces\IPersonalRepo.cs" />
     <Compile Include="PersonalRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -186,6 +186,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\PersonalDto.cs" />
+    <Compile Include="Models\PersonalSueldoDto.cs" />
     <Compile Include="Models\PersonalTipoDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
