@@ -24,6 +24,12 @@ namespace BLL
             return personalTipo;
         }
 
+        public IEnumerable<PersonalTipos> GetPersonalConTabulacion()
+        {
+            var personalTipo = CeContext.PersonalTipos.Include(t => t.SueldosTabulacion);
+
+            return personalTipo;
+        }
 
         private ControlEscolarContext CeContext => Context as ControlEscolarContext;
 

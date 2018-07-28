@@ -55,7 +55,13 @@ namespace Control_Escolar.Controllers
         [HttpGet]
         public IHttpActionResult GetAll()
         {
-            return Ok();
+            var personalTipo = _repo.GetAll();
+            if (personalTipo == null)
+                return NotFound();
+
+            var personalModel = _mapper.Map<IEnumerable<PersonalTipos>, IEnumerable<PersonalTipoBaseDto>>(personalTipo);
+
+            return Ok(personalModel);
         }
 
         [HttpPut]

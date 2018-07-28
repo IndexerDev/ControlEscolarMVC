@@ -7,7 +7,7 @@ namespace Control_Escolar.Models
 {
     public class PersonalSueldoDto
     {
-        public int IdPersonal { get; set; }        
-        public decimal PersonalSueldo { get; set; }
+        public byte IdSueldosTabulacion { get; set; }
+        public string TabulacionDescripcion  { get; set; }
     }
 }
