@@ -15,13 +15,13 @@ namespace Control_Escolar.Controllers
 {
     [RoutePrefix("api/personal")]
     public class PersonalController : ApiController
-    {        
-        private readonly IPersonalService _personal;
-        private readonly IMapper _mapper;
+    {                
+        private readonly IPersonalRepo _repo;
+        private readonly IMapper _mapper;        
 
-        public PersonalController(IPersonalService personal, IMapper mapper)
-        {     
-            _personal = personal;
+        public PersonalController(IPersonalRepo repo , IMapper mapper)
+        {                 
+            _repo = repo;
             _mapper = mapper;
         } 
            
@@ -30,11 +30,11 @@ namespace Control_Escolar.Controllers
         [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
-            var personal = _personal.GetPersonal(id);
+            var personal = _repo.Get(id);
             if (personal == null)
                 return NotFound();
 
-            var personalModel = _mapper.Map<Personal, PersonalDto>(personal);            
+            var personalModel = _mapper.Map<Personal, PersonalDto>(personal);
 
             return Ok(personalModel);
         }
@@ -42,11 +42,11 @@ namespace Control_Escolar.Controllers
 
         [HttpGet]
         public IHttpActionResult GetAll()
-        {            
-            var personalSueldos = _personal.GetPersonalConSueldos();
+        {
+            var personalSueldos = _repo.GetPersonalConSueldos();
             if (personalSueldos == null)
                 return NotFound();
-
+            
             var personalModel = _mapper.Map<IEnumerable<Personal>, IEnumerable<PersonalDto>>(personalSueldos);           
 
             return Ok(personalModel);
@@ -59,9 +59,10 @@ namespace Control_Escolar.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("El formato introducido es incorrecto");
 
-            var personalAdd =_mapper.Map<PersonalDto, Personal>(personalDto);            
+            var personalAdd =_mapper.Map<PersonalDto, Personal>(personalDto);                        
 
-            _personal.Add(personalAdd);
+            _repo.Add(personalAdd);
+            _repo.Save();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -73,13 +74,13 @@ namespace Control_Escolar.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Introduzca la información de forma correcta");
 
-            var personal = _personal.GetPersonal(personalDto.IdPersonal);
+            var personal = _repo.Get(personalDto.IdPersonal);
             if (personal == null)
                 return BadRequest("Personal no existe");
 
-            _mapper.Map(personalDto, personal);            
+            _mapper.Map(personalDto, personal);    
 
-            _personal.Update();
+            _repo.Save();
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -88,9 +89,13 @@ namespace Control_Escolar.Controllers
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult Delete(int id)
-        {            
-            if (!_personal.Delete(id))
+        {
+            var personalEliminar = _repo.Get(id);
+            if (personalEliminar == null)
                 return NotFound();
+            
+            _repo.Remove(personalEliminar);
+            _repo.Save();
 
             return StatusCode(HttpStatusCode.NoContent);
         }

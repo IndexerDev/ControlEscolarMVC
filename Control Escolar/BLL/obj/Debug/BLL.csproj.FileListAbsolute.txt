@@ -12,7 +12,6 @@
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\BLL.dll
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\BLL.pdb
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.dll
-C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\EntityFramework.dll
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.pdb
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.dll.config
 C:\Users\CNAVARRO\Documents\GitHubIS\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\EntityFramework.xml

@@ -44,8 +44,8 @@ namespace Control_Escolar
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
-
-            container.RegisterType<IPersonalService, PersonalService>();
+            
+            container.RegisterType<IPersonalRepo, PersonalRepo>();
 
             var mapper = MappingProfile.InitialzeAutoMapper().CreateMapper();
             container.RegisterInstance<IMapper>(mapper);

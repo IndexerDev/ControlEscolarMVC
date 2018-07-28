@@ -64,12 +64,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ControlModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="IPersonalRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="Personal.cs">
       <DependentUpon>ControlModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PersonalRepository.cs" />
     <Compile Include="PersonalSueldo.cs">
       <DependentUpon>ControlModel.tt</DependentUpon>
     </Compile>
