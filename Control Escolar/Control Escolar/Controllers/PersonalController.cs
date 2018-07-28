@@ -57,7 +57,7 @@ namespace Control_Escolar.Controllers
         public IHttpActionResult Add(PersonalDto personalDto)
         {
             if (!ModelState.IsValid)
-                return BadRequest("El formato introducido es incorrecto");
+                return BadRequest("El formulario introducido es incorrecto");
 
             var personalToAdd =_mapper.Map<PersonalDto, Personal>(personalDto);
 
@@ -78,8 +78,8 @@ namespace Control_Escolar.Controllers
         public IHttpActionResult Update(PersonalUpdateDto personalDto)
         {
             if (!ModelState.IsValid)
-                return BadRequest("Introduzca la información de forma correcta");
-
+                return BadRequest("El formulario introducido es incorrecto");
+            
             var personalToUpdate = _mapper.Map<PersonalUpdateDto, Personal>(personalDto);            
 
             var resultado = new List<int>();

@@ -188,6 +188,8 @@
     </Compile>
     <Compile Include="Models\PersonalDto.cs" />
     <Compile Include="Models\PersonalSueldoDto.cs" />
+    <Compile Include="Models\PersonalTipoBaseDto.cs" />
+    <Compile Include="Models\PersonalTipoBaseUpdateDto.cs" />
     <Compile Include="Models\PersonalTipoDto.cs" />
     <Compile Include="Models\PersonalUpdateDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -25,6 +25,7 @@ namespace Control_Escolar
                     .ForMember(dest => dest.PersonalSueldo, opt => 
                     opt.MapFrom(src => src.PersonalSueldos.Sueldo));
 
+                cfg.CreateMap<PersonalTipos, PersonalTipoBaseDto>();                    
 
                 // API ViewModels to Domain
                 cfg.CreateMap<PersonalDto, Personal>()
@@ -36,6 +37,10 @@ namespace Control_Escolar
                     .ForMember(dest => dest.IdPersonalTipo, opt =>
                     opt.MapFrom(src => src.PersonalTipo.IdPersonalTipo));
 
+                cfg.CreateMap<PersonalTipoBaseDto, PersonalTipos>()
+                    .ForMember(p => p.IdPersonalTipo, opt => opt.Ignore());
+
+                cfg.CreateMap<PersonalTipoBaseUpdateDto, PersonalTipos>();
 
             });
 

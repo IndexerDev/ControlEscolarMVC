@@ -9,5 +9,6 @@ namespace BLL
 {
     public interface IPersonalTipoRepo : IRepository<PersonalTipos>
     {
+        PersonalTipos SingleOrDefault(int id);
     }
 }

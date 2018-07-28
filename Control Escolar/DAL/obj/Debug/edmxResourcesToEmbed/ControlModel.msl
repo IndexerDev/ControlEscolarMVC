@@ -18,6 +18,7 @@
     <EntitySetMapping Name="PersonalTipos">
       <EntityTypeMapping TypeName="ControlDbContext.PersonalTipos">
         <MappingFragment StoreEntitySet="PersonalTipos">
+          <ScalarProperty Name="IdSueldosTabulacion" ColumnName="IdSueldosTabulacion" />
           <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
           <ScalarProperty Name="PersonalTipoDescripcion" ColumnName="PersonalTipoDescripcion" />
           <ScalarProperty Name="IsPersonalLaboral" ColumnName="IsPersonalLaboral" />
@@ -27,10 +28,10 @@
     <EntitySetMapping Name="SueldoTabulaciones">
       <EntityTypeMapping TypeName="ControlDbContext.SueldoTabulaciones">
         <MappingFragment StoreEntitySet="SueldosTabulacion">
+          <ScalarProperty Name="TabulacionDescipcion" ColumnName="TabulacionDescipcion" />
           <ScalarProperty Name="IdSueldosTabulacion" ColumnName="IdSueldosTabulacion" />
           <ScalarProperty Name="SueldoMinimo" ColumnName="SueldoMinimo" />
           <ScalarProperty Name="SueldoMaximo" ColumnName="SueldoMaximo" />
-          <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

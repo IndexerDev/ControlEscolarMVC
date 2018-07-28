@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ControlDbContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ControlDbContext.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Personal">
           <Key>
             <PropertyRef Name="IdPersonal" />
@@ -32,6 +32,7 @@
           <Property Name="IdPersonalTipo" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PersonalTipoDescripcion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IsPersonalLaboral" Type="bit" Nullable="false" />
+          <Property Name="IdSueldosTabulacion" Type="tinyint" />
         </EntityType>
         <EntityType Name="SueldosTabulacion">
           <Key>
@@ -40,7 +41,7 @@
           <Property Name="IdSueldosTabulacion" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SueldoMinimo" Type="money" Nullable="false" />
           <Property Name="SueldoMaximo" Type="money" Nullable="false" />
-          <Property Name="IdPersonalTipo" Type="tinyint" Nullable="false" />
+          <Property Name="TabulacionDescipcion" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -76,17 +77,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SueldosTabulacion_PersonalTipos">
-          <End Role="PersonalTipos" Type="Self.PersonalTipos" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="SueldosTabulacion" Type="Self.SueldosTabulacion" Multiplicity="*" />
+        <Association Name="FK_PersonalTipos_SueldosTabulacion">
+          <End Role="SueldosTabulacion" Type="Self.SueldosTabulacion" Multiplicity="0..1" />
+          <End Role="PersonalTipos" Type="Self.PersonalTipos" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="PersonalTipos">
-              <PropertyRef Name="IdPersonalTipo" />
+            <Principal Role="SueldosTabulacion">
+              <PropertyRef Name="IdSueldosTabulacion" />
             </Principal>
-            <Dependent Role="SueldosTabulacion">
-              <PropertyRef Name="IdPersonalTipo" />
+            <Dependent Role="PersonalTipos">
+              <PropertyRef Name="IdSueldosTabulacion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -104,9 +103,9 @@
             <End Role="Personal" EntitySet="Personal" />
             <End Role="PersonalSueldos" EntitySet="PersonalSueldos" />
           </AssociationSet>
-          <AssociationSet Name="FK_SueldosTabulacion_PersonalTipos" Association="Self.FK_SueldosTabulacion_PersonalTipos">
-            <End Role="PersonalTipos" EntitySet="PersonalTipos" />
+          <AssociationSet Name="FK_PersonalTipos_SueldosTabulacion" Association="Self.FK_PersonalTipos_SueldosTabulacion">
             <End Role="SueldosTabulacion" EntitySet="SueldosTabulacion" />
+            <End Role="PersonalTipos" EntitySet="PersonalTipos" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -136,7 +135,8 @@
           <Property Name="PersonalTipoDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IsPersonalLaboral" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Personal" Relationship="Self.FK_Personal_PersonalTipos1" FromRole="PersonalTipos" ToRole="Personal" />
-          <NavigationProperty Name="SueldosTabulacions" Relationship="Self.FK_SueldosTabulacion_PersonalTipos" FromRole="PersonalTipos" ToRole="SueldosTabulacion" />
+          <Property Name="IdSueldosTabulacion" Type="Byte" />
+          <NavigationProperty Name="SueldosTabulacion" Relationship="ControlDbContext.FK_PersonalTipos_SueldosTabulacion" FromRole="PersonalTipos" ToRole="SueldoTabulaciones" />
         </EntityType>
         <EntityType Name="SueldoTabulaciones">
           <Key>
@@ -145,8 +145,8 @@
           <Property Name="IdSueldosTabulacion" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SueldoMinimo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="SueldoMaximo" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="IdPersonalTipo" Type="Byte" Nullable="false" />
-          <NavigationProperty Name="PersonalTipos" Relationship="Self.FK_SueldosTabulacion_PersonalTipos" FromRole="SueldosTabulacion" ToRole="PersonalTipos" />
+          <NavigationProperty Name="PersonalTipo" Relationship="ControlDbContext.FK_PersonalTipos_SueldosTabulacion" FromRole="SueldoTabulaciones" ToRole="PersonalTipos" />
+          <Property Name="TabulacionDescipcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -190,20 +190,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SueldosTabulacion_PersonalTipos">
-          <End Role="PersonalTipos" Type="ControlDbContext.PersonalTipos" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="SueldosTabulacion" Type="ControlDbContext.SueldoTabulaciones" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PersonalTipos">
-              <PropertyRef Name="IdPersonalTipo" />
-            </Principal>
-            <Dependent Role="SueldosTabulacion">
-              <PropertyRef Name="IdPersonalTipo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="ControlEscolarContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Personal" EntityType="Self.Personal" />
           <EntitySet Name="PersonalTipos" EntityType="ControlDbContext.PersonalTipos" />
@@ -218,11 +204,23 @@
             <End Role="Personal" EntitySet="Personal" />
             <End Role="PersonalSueldos" EntitySet="PersonalSueldos" />
           </AssociationSet>
-          <AssociationSet Name="FK_SueldosTabulacion_PersonalTipos" Association="Self.FK_SueldosTabulacion_PersonalTipos">
+          <AssociationSet Name="FK_PersonalTipos_SueldosTabulacion" Association="ControlDbContext.FK_PersonalTipos_SueldosTabulacion">
+            <End Role="SueldoTabulaciones" EntitySet="SueldoTabulaciones" />
             <End Role="PersonalTipos" EntitySet="PersonalTipos" />
-            <End Role="SueldosTabulacion" EntitySet="SueldoTabulaciones" />
           </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_PersonalTipos_SueldosTabulacion">
+          <End Type="ControlDbContext.SueldoTabulaciones" Role="SueldoTabulaciones" Multiplicity="0..1" />
+          <End Type="ControlDbContext.PersonalTipos" Role="PersonalTipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SueldoTabulaciones">
+              <PropertyRef Name="IdSueldosTabulacion" />
+            </Principal>
+            <Dependent Role="PersonalTipos">
+              <PropertyRef Name="IdSueldosTabulacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -246,6 +244,7 @@
           <EntitySetMapping Name="PersonalTipos">
             <EntityTypeMapping TypeName="ControlDbContext.PersonalTipos">
               <MappingFragment StoreEntitySet="PersonalTipos">
+                <ScalarProperty Name="IdSueldosTabulacion" ColumnName="IdSueldosTabulacion" />
                 <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
                 <ScalarProperty Name="PersonalTipoDescripcion" ColumnName="PersonalTipoDescripcion" />
                 <ScalarProperty Name="IsPersonalLaboral" ColumnName="IsPersonalLaboral" />
@@ -255,10 +254,10 @@
           <EntitySetMapping Name="SueldoTabulaciones">
             <EntityTypeMapping TypeName="ControlDbContext.SueldoTabulaciones">
               <MappingFragment StoreEntitySet="SueldosTabulacion">
+                <ScalarProperty Name="TabulacionDescipcion" ColumnName="TabulacionDescipcion" />
                 <ScalarProperty Name="IdSueldosTabulacion" ColumnName="IdSueldosTabulacion" />
                 <ScalarProperty Name="SueldoMinimo" ColumnName="SueldoMinimo" />
                 <ScalarProperty Name="SueldoMaximo" ColumnName="SueldoMaximo" />
-                <ScalarProperty Name="IdPersonalTipo" ColumnName="IdPersonalTipo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

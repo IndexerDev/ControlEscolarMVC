@@ -18,16 +18,15 @@ namespace DAL
         public PersonalTipos()
         {
             this.Personal = new HashSet<Personal>();
-            this.SueldosTabulacions = new HashSet<SueldoTabulaciones>();
         }
     
         public byte IdPersonalTipo { get; set; }
         public string PersonalTipoDescripcion { get; set; }
         public bool IsPersonalLaboral { get; set; }
+        public Nullable<byte> IdSueldosTabulacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Personal> Personal { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SueldoTabulaciones> SueldosTabulacions { get; set; }
+        public virtual SueldoTabulaciones SueldosTabulacion { get; set; }
     }
 }

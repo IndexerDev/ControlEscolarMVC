@@ -14,11 +14,18 @@ namespace DAL
     
     public partial class SueldoTabulaciones
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SueldoTabulaciones()
+        {
+            this.PersonalTipo = new HashSet<PersonalTipos>();
+        }
+    
         public byte IdSueldosTabulacion { get; set; }
         public decimal SueldoMinimo { get; set; }
         public decimal SueldoMaximo { get; set; }
-        public byte IdPersonalTipo { get; set; }
+        public string TabulacionDescipcion { get; set; }
     
-        public virtual PersonalTipos PersonalTipos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PersonalTipos> PersonalTipo { get; set; }
     }
 }
