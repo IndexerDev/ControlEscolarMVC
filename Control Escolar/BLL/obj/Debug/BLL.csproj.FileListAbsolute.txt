@@ -5,7 +5,6 @@
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.dll
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\obj\Debug\BLL.pdb
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.dll
-\\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\EntityFramework.dll
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.pdb
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\DAL.dll.config
 \\Mac\Home\Documents\GitHub\ControlEscolarMVC\Control Escolar\BLL\bin\Debug\EntityFramework.xml

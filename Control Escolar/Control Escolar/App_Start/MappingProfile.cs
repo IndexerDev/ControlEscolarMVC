@@ -29,8 +29,8 @@ namespace Control_Escolar
                 // API ViewModels to Domain
                 cfg.CreateMap<PersonalDto, Personal>()
                     .ForMember(p => p.IdPersonal, opt => opt.Ignore())
-                    .ForMember(dest => dest.IdPersonalTipo, opt => 
-                    opt.MapFrom(src => src.PersonalTipo.IdPersonalTipo));
+                    .ForMember(dest => dest.IdPersonalTipo, opt =>
+                    opt.MapFrom(src => src.PersonalTipo.IdPersonalTipo));                    
                 
 
 

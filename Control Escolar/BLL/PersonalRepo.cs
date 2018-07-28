@@ -23,7 +23,7 @@ namespace BLL
         }
         
 
-        public List<int> ProcesoRegistroPersonal(Personal personal)
+        public List<int> ProcesoRegistroPersonal(Personal personal, decimal sueldo)
         {
             var validaciones = new List<int>();
 
@@ -42,13 +42,16 @@ namespace BLL
 
                 if (isPersonalLaboral)
                 {
+                    
+                    CeContext.Personal.Add(personal);
+                    CeContext.SaveChanges();
+
                     var personalSueldo = new PersonalSueldo
                     {
                         IdPersonal = personal.IdPersonal,
-                        Sueldo = personal.PersonalSueldos.Sueldo
+                        Sueldo = sueldo
                     };
 
-                    CeContext.Personal.Add(personal);
                     CeContext.PersonalSueldos.Add(personalSueldo);
                     CeContext.SaveChanges();
                 }
@@ -61,13 +64,24 @@ namespace BLL
             
             return validaciones;
         }
+        
 
+        public PersonalSueldo GetPersonalSueldo(int id)
+        {
+            var resultado = CeContext.PersonalSueldos.SingleOrDefault(p => p.IdPersonal == id);
 
+            return resultado;
+        }
+
+        public void RemoveSueldo(PersonalSueldo personalSueldo)
+        {
+            CeContext.PersonalSueldos.Remove(personalSueldo);
+        }
 
         private bool GetCorreoElectronico(string correoElectronico)
         {
             var resultado = CeContext.Personal.SingleOrDefault(c => c.CorreoElectronico == correoElectronico);
-            
+
             return resultado != null;
         }
 
@@ -77,6 +91,9 @@ namespace BLL
 
             return resultado != null;
         }
+
+
+        public ControlEscolarContext CeContext => Context as ControlEscolarContext;
 
 
         /// <summary>
@@ -110,6 +127,6 @@ namespace BLL
         //    return (List<T>) joinResult;
         //}
 
-        public ControlEscolarContext CeContext => Context as ControlEscolarContext;
+
     }
 }

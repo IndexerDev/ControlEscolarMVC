@@ -11,7 +11,12 @@ namespace BLL
     {
         IEnumerable<Personal> GetPersonalConSueldos();        
 
-        List<int> ProcesoRegistroPersonal(Personal personal);
+        List<int> ProcesoRegistroPersonal(Personal personal, decimal sueldo);
+
+        PersonalSueldo GetPersonalSueldo(int id);
+
+        void RemoveSueldo(PersonalSueldo personalSueldo);
+
 
     }
 }

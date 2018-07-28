@@ -10,7 +10,6 @@ using BLL;
 using Control_Escolar.Models;
 using DAL;
 using AutoMapper;
-using Enum = System.Enum;
 
 namespace Control_Escolar.Controllers
 {
@@ -18,8 +17,8 @@ namespace Control_Escolar.Controllers
     public class PersonalController : ApiController
     {                
         private readonly IPersonalRepo _repo;
-        private readonly IMapper _mapper;        
-
+        private readonly IMapper _mapper;              
+        
         public PersonalController(IPersonalRepo repo , IMapper mapper)
         {                 
             _repo = repo;
@@ -34,7 +33,7 @@ namespace Control_Escolar.Controllers
             var personal = _repo.Get(id);
             if (personal == null)
                 return NotFound();
-
+            
             var personalModel = _mapper.Map<Personal, PersonalDto>(personal);
 
             return Ok(personalModel);
@@ -62,9 +61,14 @@ namespace Control_Escolar.Controllers
 
             var personalToAdd =_mapper.Map<PersonalDto, Personal>(personalDto);
 
-            _repo.ProcesoRegistroPersonal(personalToAdd);
-            
-            // crear Enum con switch para devolver a cliente algo
+            var resultado = new List<int>();
+            resultado = _repo.ProcesoRegistroPersonal(personalToAdd, personalDto.PersonalSueldo);
+
+            if (resultado.Contains(BLL.Enum.Validaciones.Correo.GetHashCode()))
+                return BadRequest("El Correo Electrónico ya existe");
+
+            if (resultado.Contains(BLL.Enum.Validaciones.NumeroControl.GetHashCode()))
+                return BadRequest("El Número de Control ya existe");
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -78,6 +82,8 @@ namespace Control_Escolar.Controllers
             if (!ModelState.IsValid)
                 return BadRequest("Introduzca la información de forma correcta");
 
+            var personalToAdd = _mapper.Map<PersonalDto, Personal>(personalDto);
+            
             var personal = _repo.Get(personalDto.IdPersonal);
             if (personal == null)
                 return BadRequest("Personal no existe");
@@ -93,11 +99,16 @@ namespace Control_Escolar.Controllers
         [HttpDelete]
         [Route("{id}")]
         public IHttpActionResult Delete(int id)
-        {
+        {            
             var personalEliminar = _repo.Get(id);
             if (personalEliminar == null)
                 return NotFound();
-            
+
+            var personalSueldo = _repo.GetPersonalSueldo(id);
+
+            if (personalSueldo != null)
+                _repo.RemoveSueldo(personalSueldo);
+
             _repo.Remove(personalEliminar);
             _repo.Save();
 
